@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 require __DIR__ . "/data.php";
 require __DIR__ . "/functions.php";
+
+$jumlahItem = count($daftarItem);
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -15,9 +17,12 @@ require __DIR__ . "/functions.php";
 <body>
 
 <header class="kepala">
-    <div class="wadah">
-        <h1><?= e($namaSitus) ?></h1>
-        <p>Makan kenyang, harga mahasiswa.</p>
+    <div class="wadah kepala__isi">
+        <img src="assets/logo.svg" alt="Logo kantin berupa mangkuk hijau" class="logo">
+        <div>
+            <h1><?= e($namaSitus) ?></h1>
+            <p>Makan kenyang, harga mahasiswa.</p>
+        </div>
     </div>
 </header>
 
@@ -29,29 +34,42 @@ require __DIR__ . "/functions.php";
 </nav>
 
 <main class="wadah">
-    <section class="kotak">
-        <h2>Tentang Kami</h2>
-        <p>
-            Kantin Mas Iqbal adalah kantin kecil di dekat kampus yang menjual
-            makanan, camilan, dan minuman dengan harga murah untuk mahasiswa.
-        </p>
+    <section class="kotak sambutan">
+        <div>
+            <h2>Tentang Kami</h2>
+            <p>
+                Kantin kecil di dekat kampus yang menjual makanan, camilan, dan
+                minuman dengan harga ramah di kantong mahasiswa. Semua menu dimasak
+                setiap hari, mulai dari Rp1.000 saja.
+            </p>
+            <a href="katalog.php" class="tombol">Lihat <?= e((string) $jumlahItem) ?> Menu</a>
+        </div>
+        <img src="assets/kantin.svg" alt="Ilustrasi gedung kantin dengan atap merah putih" class="gambar-kantin">
     </section>
 
     <section class="kotak">
         <h2>Informasi Kantin</h2>
 
-        <h3>Jam Buka</h3>
-        <p>Senin - Sabtu, 07.00 - 21.00 WIB</p>
-
-        <h3>Alamat &amp; Kontak</h3>
-        <p>Jl. Kampus No. 10, Sukoharjo</p>
-        <p>WhatsApp: 0812-3456-7890</p>
+        <div class="info">
+            <div class="info__item">
+                <h3>🕖 Jam Buka</h3>
+                <p>Senin - Sabtu<br>07.00 - 21.00 WIB</p>
+            </div>
+            <div class="info__item">
+                <h3>📍 Alamat</h3>
+                <p>Jl. Kampus No. 10<br>Sukoharjo</p>
+            </div>
+            <div class="info__item">
+                <h3>📱 Kontak</h3>
+                <p>WhatsApp<br>0812-3456-7890</p>
+            </div>
+        </div>
     </section>
 </main>
 
 <footer class="kaki">
     <div class="wadah">
-        <p>&copy; <?= date("Y") ?> <?= e($namaSitus) ?> - Iqbal Bramasta Putra (025A00236005)</p>
+        <p>&copy; <?= e(date("Y")) ?> <?= e($namaSitus) ?> &middot; Iqbal Bramasta Putra (025A00236005)</p>
     </div>
 </footer>
 

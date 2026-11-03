@@ -4,8 +4,9 @@ declare(strict_types=1);
 require __DIR__ . "/data.php";
 require __DIR__ . "/functions.php";
 
-$jumlahItem    = count($daftarItem);                 // fungsi array bawaan
-$rataRataHarga = hitungRataRataHarga($daftarItem);   // fungsi buatan sendiri
+$jumlahItem    = count($daftarItem);                       // fungsi array bawaan
+$rataRataHarga = hitungRataRataHarga($daftarItem);         // fungsi buatan sendiri
+$hargaTermurah = min(array_column($daftarItem, "harga"));  // harga paling kecil
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -18,9 +19,12 @@ $rataRataHarga = hitungRataRataHarga($daftarItem);   // fungsi buatan sendiri
 <body>
 
 <header class="kepala">
-    <div class="wadah">
-        <h1><?= e($namaSitus) ?></h1>
-        <p>Makan kenyang, harga mahasiswa.</p>
+    <div class="wadah kepala__isi">
+        <img src="assets/logo.svg" alt="Logo kantin berupa mangkuk hijau" class="logo">
+        <div>
+            <h1><?= e($namaSitus) ?></h1>
+            <p>Makan kenyang, harga mahasiswa.</p>
+        </div>
     </div>
 </header>
 
@@ -34,10 +38,21 @@ $rataRataHarga = hitungRataRataHarga($daftarItem);   // fungsi buatan sendiri
 <main class="wadah">
     <section class="kotak">
         <h2>Daftar Menu</h2>
-        <p>
-            Ada <strong><?= e((string) $jumlahItem) ?></strong> menu.
-            Rata-rata harga: <strong><?= e(formatRupiah($rataRataHarga)) ?></strong>
-        </p>
+
+        <div class="ringkasan">
+            <div class="ringkasan__item">
+                <span><?= e((string) $jumlahItem) ?></span>
+                Jumlah menu
+            </div>
+            <div class="ringkasan__item">
+                <span><?= e(formatRupiah($rataRataHarga)) ?></span>
+                Rata-rata harga
+            </div>
+            <div class="ringkasan__item">
+                <span><?= e(formatRupiah($hargaTermurah)) ?></span>
+                Harga termurah
+            </div>
+        </div>
 
         <div class="grid">
             <?php foreach ($daftarItem as $item): ?>
@@ -45,12 +60,15 @@ $rataRataHarga = hitungRataRataHarga($daftarItem);   // fungsi buatan sendiri
                 if ($item["tersedia"] === true) {
                     $label      = "Tersedia";
                     $kelasLabel = "label";
+                    $kelasKartu = "kartu";
                 } else {
                     $label      = "Habis";
                     $kelasLabel = "label label--habis";
+                    $kelasKartu = "kartu kartu--habis";
                 }
                 ?>
-                <article class="kartu">
+                <article class="<?= e($kelasKartu) ?>">
+                    <p class="ikon"><?= e($item["ikon"]) ?></p>
                     <h3><?= e($item["nama"]) ?></h3>
                     <p class="kategori"><?= e($item["kategori"]) ?></p>
                     <p class="harga"><?= e(formatRupiah($item["harga"])) ?></p>
@@ -63,7 +81,7 @@ $rataRataHarga = hitungRataRataHarga($daftarItem);   // fungsi buatan sendiri
 
 <footer class="kaki">
     <div class="wadah">
-        <p>&copy; <?= date("Y") ?> <?= e($namaSitus) ?> - Iqbal Bramasta Putra (025A00236005)</p>
+        <p>&copy; <?= e(date("Y")) ?> <?= e($namaSitus) ?> &middot; Iqbal Bramasta Putra (025A00236005)</p>
     </div>
 </footer>
 

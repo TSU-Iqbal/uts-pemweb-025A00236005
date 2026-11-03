@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" width="400" height="260">
+  <rect width="400" height="260" rx="16" fill="#e3f1e9"/>
+  <!-- atap -->
+  <path d="M40 90 L70 40 H330 L360 90 Z" fill="#c0392b"/>
+  <path d="M70 40 L82 90 M110 40 L114 90 M150 40 L146 90 M190 40 L178 90 M230 40 L210 90 M270 40 L242 90 M310 40 L274 90" stroke="#ffffff" stroke-width="10" opacity="0.85"/>
+  <rect x="40" y="88" width="320" height="10" fill="#922b21"/>
+  <!-- bangunan -->
+  <rect x="60" y="98" width="280" height="130" fill="#ffffff"/>
+  <rect x="60" y="180" width="280" height="48" fill="#2e7d55"/>
+  <!-- papan nama -->
+  <rect x="140" y="110" width="120" height="30" rx="6" fill="#f5b041"/>
+  <text x="200" y="131" font-family="Trebuchet MS, Arial" font-size="16" font-weight="bold" fill="#1f3b2d" text-anchor="middle">KANTIN</text>
+  <!-- mangkuk & gelas -->
+  <path d="M90 165h50c0 14-11 20-25 20s-25-6-25-20z" fill="#f5b041"/>
+  <rect x="265" y="148" width="26" height="36" rx="4" fill="#a3d9b8"/>
+  <rect x="265" y="148" width="26" height="12" fill="#f39c12"/>
+  <rect x="300" y="155" width="20" height="29" rx="4" fill="#a3d9b8"/>
+  <!-- tanah -->
+  <rect x="20" y="228" width="360" height="8" rx="4" fill="#24603f"/>
+</svg>

@@ -1,0 +1,131 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f1f7f4;
+    color: #1f3b2d;
+}
+
+/* Kontainer utama */
+.wadah {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Header */
+.kepala {
+    background-color: #2e7d55;
+    color: #ffffff;
+    padding: 24px 0;
+}
+
+/* Navigasi */
+.navigasi {
+    background-color: #24603f;
+    padding: 10px 0;
+}
+
+.navigasi a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-right: 16px;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+.navigasi a:hover,
+.navigasi a.aktif {
+    background-color: #f5b041;
+    color: #1f3b2d;
+}
+
+/* Kotak isi */
+main {
+    padding: 20px 16px;
+}
+
+.kotak {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.kotak h2 {
+    margin-bottom: 8px;
+    color: #2e7d55;
+}
+
+.kotak h3 {
+    margin-top: 12px;
+}
+
+/* Grid kartu menu */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.kartu {
+    border: 1px solid #cfe3d8;
+    border-radius: 8px;
+    padding: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.kartu:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.kategori {
+    font-size: 0.85rem;
+    color: #6b8a7a;
+}
+
+.harga {
+    font-weight: bold;
+    color: #d35400;
+}
+
+.label {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    color: #ffffff;
+    background-color: #2e7d55;
+}
+
+.label--habis {
+    background-color: #c0392b;
+}
+
+/* Footer */
+.kaki {
+    background-color: #1f3b2d;
+    color: #d6e9de;
+    padding: 16px 0;
+    text-align: center;
+}
+
+/* Tampilan di layar ponsel */
+@media (max-width: 600px) {
+    .kepala h1 {
+        font-size: 1.4rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -7,8 +7,9 @@
 
 ## Tema
 Menu kantin/kafe. Halaman profil berisi info kantin (jam buka, alamat, kontak).
-Halaman menu menampilkan 8 menu dengan atribut nama, kategori, harga, dan tersedia.
-Menu yang tidak tersedia diberi label **"Habis"**.
+Halaman menu menampilkan 8 menu dengan atribut ikon, nama, kategori, harga, dan tersedia.
+Menu yang tidak tersedia diberi label **"Habis"**. Di atas daftar menu ada ringkasan:
+jumlah menu, rata-rata harga, dan harga termurah.
 
 ## Struktur File
 - `data.php` - data nama situs dan daftar menu (array multidimensi)
@@ -16,7 +17,7 @@ Menu yang tidak tersedia diberi label **"Habis"**.
 - `index.php` - halaman profil
 - `katalog.php` - halaman daftar menu (foreach + if)
 - `style.css` - tampilan
-- `assets/` - gambar
+- `assets/` - gambar logo dan ilustrasi kantin (SVG)
 - `screenshots/` - tangkapan layar
 
 ## Cara Menjalankan
@@ -35,7 +36,7 @@ Halaman Menu:
 ![Halaman Menu](screenshots/katalog.png)
 
 ## Referensi
-- php.net (`number_format`, `array_column`, `array_sum`, `count`)
+- php.net (`number_format`, `array_column`, `array_sum`, `count`, `min`)
 - MDN Web Docs (elemen semantik HTML, CSS grid, media query)
 - Contoh Toko Kue dari dosen (pola struktur file)
 

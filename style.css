@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
     line-height: 1.6;
     background-color: #f1f7f4;
     color: #1f3b2d;
@@ -21,23 +21,37 @@ body {
 
 /* Header */
 .kepala {
-    background-color: #2e7d55;
+    background: linear-gradient(135deg, #2e7d55, #24603f);
     color: #ffffff;
     padding: 24px 0;
 }
 
+.kepala__isi {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.logo {
+    width: 64px;
+    height: 64px;
+}
+
 /* Navigasi */
 .navigasi {
-    background-color: #24603f;
+    background-color: #1f3b2d;
     padding: 10px 0;
+    position: sticky;
+    top: 0;
 }
 
 .navigasi a {
     color: #ffffff;
     text-decoration: none;
-    margin-right: 16px;
-    padding: 4px 10px;
-    border-radius: 4px;
+    margin-right: 12px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    transition: background-color 0.2s ease;
 }
 
 .navigasi a:hover,
@@ -46,25 +60,93 @@ body {
     color: #1f3b2d;
 }
 
-/* Kotak isi */
+/* Isi halaman */
 main {
-    padding: 20px 16px;
+    padding-top: 24px;
+    padding-bottom: 24px;
 }
 
 .kotak {
     background-color: #ffffff;
-    border-radius: 8px;
-    padding: 20px;
+    border-radius: 12px;
+    padding: 24px;
     margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .kotak h2 {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     color: #2e7d55;
 }
 
-.kotak h3 {
-    margin-top: 12px;
+/* Bagian sambutan di halaman profil */
+.sambutan {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.gambar-kantin {
+    width: 320px;
+    max-width: 100%;
+}
+
+.tombol {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 10px 20px;
+    background-color: #f5b041;
+    color: #1f3b2d;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 24px;
+    transition: transform 0.2s ease;
+}
+
+.tombol:hover {
+    transform: scale(1.05);
+}
+
+/* Info jam buka, alamat, kontak */
+.info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.info__item {
+    background-color: #f1f7f4;
+    border-radius: 10px;
+    padding: 16px;
+}
+
+.info__item h3 {
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+/* Ringkasan di halaman menu */
+.ringkasan {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.ringkasan__item {
+    background-color: #f1f7f4;
+    border-radius: 10px;
+    padding: 12px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #5c7a6b;
+}
+
+.ringkasan__item span {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #d35400;
 }
 
 /* Grid kartu menu */
@@ -72,19 +154,28 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 16px;
-    margin-top: 16px;
 }
 
 .kartu {
     border: 1px solid #cfe3d8;
-    border-radius: 8px;
+    border-radius: 12px;
     padding: 16px;
+    text-align: center;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .kartu:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.kartu--habis {
+    opacity: 0.6;
+}
+
+.ikon {
+    font-size: 2.6rem;
+    line-height: 1.2;
 }
 
 .kategori {
@@ -94,14 +185,15 @@ main {
 
 .harga {
     font-weight: bold;
+    font-size: 1.1rem;
     color: #d35400;
 }
 
 .label {
     display: inline-block;
     margin-top: 8px;
-    padding: 2px 10px;
-    border-radius: 4px;
+    padding: 2px 12px;
+    border-radius: 20px;
     font-size: 0.8rem;
     color: #ffffff;
     background-color: #2e7d55;
@@ -115,8 +207,9 @@ main {
 .kaki {
     background-color: #1f3b2d;
     color: #d6e9de;
-    padding: 16px 0;
+    padding: 18px 0;
     text-align: center;
+    font-size: 0.9rem;
 }
 
 /* Tampilan di layar ponsel */
@@ -125,7 +218,21 @@ main {
         font-size: 1.4rem;
     }
 
-    .grid {
+    .kotak {
+        padding: 16px;
+    }
+
+    .sambutan {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .info,
+    .ringkasan {
         grid-template-columns: 1fr;
+    }
+
+    .grid {
+        grid-template-columns: 1fr 1fr;
     }
 }
